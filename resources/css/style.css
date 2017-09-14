@@ -2,16 +2,17 @@ html {
   font-size: 18px;
   line-height: 1.4rem;
   font-family: Helvetica;
-   box-sizing: border-box;
 }
 
 body {
   font-size: 18px;
   line-height: 1.4rem;
   font-family: Helvetica;
+  width: 100%;
 }
 .site-container {
   width: 960px;
+  margin: 0 auto;
 }
 header {
   display: flex;
@@ -24,14 +25,13 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.top-container {
+.top-container, .bottom-container {
   display: flex;
   justify-content: space-between;
-  max-width: 960px;
-  height: auto;
   background-color: cadetblue;
   margin-top: 1rem;
   color: white;
+  border: 1px solid red;
 }
 .logo-name {
   display: flex;
@@ -55,6 +55,10 @@ nav {
 nav ul {
   display: inline-flex;
   border: 1px solid lime;
+  margin-right: 1rem;
+}
+.phone-view {
+  display: none;
 }
 nav ul li {
   margin: 1rem;
@@ -67,8 +71,8 @@ nav ul li {
   display: inline-block;
   margin-top: 10rem;
   line-height: 2.4rem;
-  position: relative;
-  left: 12rem
+
+  left: 12rem;
 }
 .title-box h1 {
   font-size: 2rem;
@@ -82,16 +86,15 @@ nav ul li {
   justify-content: center;
   margin: 3rem auto;
   border: 1px solid orange;
-  max-height: 8rem;
+  height: 8rem;
 }
 .icons {
   display: flex;
   max-width: 5rem;
-  height: 8rem;
+  max-height: 8rem;
   text-align: center;
   margin: auto 3rem;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   border: 1px solid aqua;
 }
@@ -102,5 +105,136 @@ nav ul li {
 .icons p {
   display: flex;
   align-items: flex-end;
+  font-weight: bold;
   border: 1px solid deeppink;
+}
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 8rem;
+}
+
+/*  starting "info" here  */
+.info-box {
+  display: flex;
+  max-width: 10rem;
+  background-color: cadetblue;
+  background-size: 10rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid red;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+  border: 1px solid blue;
+}
+.philosophy {
+  display: inline-flex;
+  flex-flow: column wrap;
+  border: 1px solid aqua;
+  width: 35%;
+  margin-right: 10%;
+}
+.appointments {
+  display: inline-flex;
+  flex-flow: column wrap;
+  border: 1px solid lime;
+  width: 35%;
+}
+.info p {
+  width: 100%;
+  border: 1px solid pink;
+  margin-top: 1rem;
+}
+.bottom-container {
+  display: flex;
+  background-color: azure;
+  color: black;
+  padding: 4rem 0;
+}
+
+/*  starting media queries  */
+@media only screen and (max-width: 1024px) {
+  .site-container {
+    width: 100%;
+  }
+  header {
+    width: 100%;
+    height: 22rem;
+  }
+  .top-container, .bottom-container {
+    width: 100%;
+    margin: 0;
+  }
+  .title-box {
+    padding: 0.75rem 4rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
+  .title-box h1 {
+    font-size: 1.33rem;
+  }
+  body {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header {
+    height: 17rem;
+    background-position: 20%;
+  }
+  .logo-name span {
+    display: none;
+  }
+  nav ul li {
+    display: none;
+  }
+  .phone-view {
+    display: flex;
+  }
+
+  .title-box {
+    width: 100%;
+    margin: 0;
+    line-height: normal;
+    padding: 0;
+    margin-top: 9rem;
+    text-align: center;
+  }
+  .title-box h1 {
+    padding: 1rem 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .icons-container {
+    flex-direction: column;
+    height: auto;
+    margin: 3.77rem auto;
+    align-items: center;
+  }
+  .icons {
+    margin: 1.54rem 0;
+  }
+  .info {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .philosophy, .appointments {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .info-box {
+    max-width: 100%;
+    margin: 0 ;
+  }
+  .logo-name {
+    margin: auto;
+  }
 }
